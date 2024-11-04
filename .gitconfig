@@ -1,0 +1,42 @@
+[user]
+    name     = Julio Kochhann
+    email    = juliokochhann@outlook.com
+    username = juliokoch
+[includeIf "gitdir/i:~/GitHub/Maker Center/"]
+    path = "~/GitHub/Maker Center/dotfiles/.gitconfig"
+[color]
+	ui = auto
+[core]
+    editor   = nano
+    autocrlf = input
+[credential]
+    helper = store
+    credentialStore = secretservice
+    helper = 
+    helper = /usr/local/bin/git-credential-manager
+[credential "https://dev.azure.com"]
+    useHttpPath = true
+[credential "https://github.com"]
+    username = juliokoch
+[includeIf "gitdir/i:~/GitHub/Maker Center/"]
+    path = "~/GitHub/Maker Center/dotfiles/.gitconfig"
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd  = code --wait --diff $LOCAL $REMOTE
+[init]
+    defaultBranch = main
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd  = code --wait $MERGED
+[alias]
+    br   = branch
+    ci   = commit
+    co   = checkout
+    st   = status
+    sw   = switch
+    rt   = restore
+    all  = log --oneline
+    last = log -1 HEAD
+    cl   = !git clone https://github.com/juliokoch/$1 && :
